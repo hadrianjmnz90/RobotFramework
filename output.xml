@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191226 16:46:07.377" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
+<suite source="/home/adrianjimenez/PycharmProjects/Automation/TestCases/TC002_FetchData.robot" id="s1" name="TC002 FetchData">
+<test id="s1-t1" name="Test">
+<kw type="setup" name="Start Browser and Maximize" library="BeforeTest">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://www.thetestingworld.com/testings/</arg>
+<arg>Firefox</arg>
+</arguments>
+<msg timestamp="20191226 16:46:07.570" level="INFO">Opening browser 'Firefox' to base url 'https://www.thetestingworld.com/testings/'.</msg>
+<msg timestamp="20191226 16:46:07.573" level="INFO">Firefox driver log is always forced to to: /home/adrianjimenez/PycharmProjects/Automation/geckodriver-10.log</msg>
+<status status="PASS" endtime="20191226 16:46:22.011" starttime="20191226 16:46:07.570"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20191226 16:46:22.018" starttime="20191226 16:46:22.011"></status>
+</kw>
+<status status="PASS" endtime="20191226 16:46:22.018" starttime="20191226 16:46:07.569"></status>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${PageTitle}</var>
+</assign>
+<msg timestamp="20191226 16:46:22.023" level="INFO">${PageTitle} = Login &amp; Sign Up Forms</msg>
+<status status="PASS" endtime="20191226 16:46:22.023" starttime="20191226 16:46:22.019"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${PageTitle}</arg>
+</arguments>
+<msg timestamp="20191226 16:46:22.024" level="INFO">Login &amp; Sign Up Forms</msg>
+<status status="PASS" endtime="20191226 16:46:22.024" starttime="20191226 16:46:22.023"></status>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://input[@type="submit"]</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20191226 16:46:22.069" level="INFO">${value} = Sign up</msg>
+<status status="PASS" endtime="20191226 16:46:22.069" starttime="20191226 16:46:22.025"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<msg timestamp="20191226 16:46:22.070" level="INFO">Sign up</msg>
+<status status="PASS" endtime="20191226 16:46:22.070" starttime="20191226 16:46:22.069"></status>
+</kw>
+<kw name="Get List Items" library="SeleniumLibrary">
+<doc>Returns all labels or values of selection list ``locator``.</doc>
+<arguments>
+<arg>id:countryId</arg>
+</arguments>
+<assign>
+<var>${allCountries}</var>
+</assign>
+<msg timestamp="20191226 16:46:24.847" level="INFO">${allCountries} = [u'Select Country', u'Afghanistan', u'Albania', u'Algeria', u'American Samoa', u'Andorra', u'Angola', u'Anguilla', u'Antarctica', u'Antigua And Barbuda', u'Argentina', u'Armenia', u'Aruba', u'Australi...</msg>
+<status status="PASS" endtime="20191226 16:46:24.847" starttime="20191226 16:46:22.070"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${allCountries}</arg>
+</arguments>
+<status status="PASS" endtime="20191226 16:46:24.848" starttime="20191226 16:46:24.847"></status>
+</kw>
+<kw type="teardown" name="Close Browser Window" library="BeforeTest">
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20191226 16:46:24.852" level="INFO">${title} = Login &amp; Sign Up Forms</msg>
+<status status="PASS" endtime="20191226 16:46:24.852" starttime="20191226 16:46:24.849"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20191226 16:46:24.853" level="INFO">Login &amp; Sign Up Forms</msg>
+<status status="PASS" endtime="20191226 16:46:24.853" starttime="20191226 16:46:24.853"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20191226 16:46:27.923" starttime="20191226 16:46:24.853"></status>
+</kw>
+<status status="PASS" endtime="20191226 16:46:27.924" starttime="20191226 16:46:24.849"></status>
+</kw>
+<status status="PASS" endtime="20191226 16:46:27.924" critical="yes" starttime="20191226 16:46:07.568"></status>
+</test>
+<doc>This test is for open login and close browser</doc>
+<status status="PASS" endtime="20191226 16:46:27.925" starttime="20191226 16:46:07.379"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TC002 FetchData" pass="1">TC002 FetchData</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
