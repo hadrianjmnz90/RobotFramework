@@ -1,6 +1,5 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library    SeleniumLibrary
 #Resource    /home/adrianjimenez/PycharmProjects/Automation/Resources/BeforeTest.robot
 Resource    ../Resources/BeforeTest.robot
 Documentation    This test is for open login and close browser

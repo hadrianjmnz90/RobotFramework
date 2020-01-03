@@ -1,76 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20191226 16:46:07.377" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
-<suite source="/home/adrianjimenez/PycharmProjects/Automation/TestCases/TC002_FetchData.robot" id="s1" name="TC002 FetchData">
-<test id="s1-t1" name="Test">
+<robot rpa="false" generated="20200103 15:10:12.983" generator="Robot 3.1.2 (Python 2.7.15+ on linux2)">
+<suite source="/home/adrianjimenez/PycharmProjects/Automation/TestCases/Login_TC.robot" id="s1" name="Login TC">
+<test id="s1-t1" name="Register Form">
 <kw type="setup" name="Start Browser and Maximize" library="BeforeTest">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>https://www.thetestingworld.com/testings/</arg>
-<arg>Firefox</arg>
+<arg>Opera</arg>
 </arguments>
-<msg timestamp="20191226 16:46:07.570" level="INFO">Opening browser 'Firefox' to base url 'https://www.thetestingworld.com/testings/'.</msg>
-<msg timestamp="20191226 16:46:07.573" level="INFO">Firefox driver log is always forced to to: /home/adrianjimenez/PycharmProjects/Automation/geckodriver-10.log</msg>
-<status status="PASS" endtime="20191226 16:46:22.011" starttime="20191226 16:46:07.570"></status>
+<msg timestamp="20200103 15:10:14.272" level="INFO">Opening browser 'Opera' to base url 'https://www.thetestingworld.com/testings/'.</msg>
+<status status="PASS" endtime="20200103 15:10:47.439" starttime="20200103 15:10:14.271"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20191226 16:46:22.018" starttime="20191226 16:46:22.011"></status>
+<status status="PASS" endtime="20200103 15:10:49.966" starttime="20200103 15:10:47.440"></status>
 </kw>
-<status status="PASS" endtime="20191226 16:46:22.018" starttime="20191226 16:46:07.569"></status>
+<status status="PASS" endtime="20200103 15:10:49.967" starttime="20200103 15:10:14.270"></status>
 </kw>
-<kw name="Get Title" library="SeleniumLibrary">
-<doc>Returns the title of the current page.</doc>
-<assign>
-<var>${PageTitle}</var>
-</assign>
-<msg timestamp="20191226 16:46:22.023" level="INFO">${PageTitle} = Login &amp; Sign Up Forms</msg>
-<status status="PASS" endtime="20191226 16:46:22.023" starttime="20191226 16:46:22.019"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Enter user, mail and pass">
 <arguments>
-<arg>${PageTitle}</arg>
+<arg>thisistheusername</arg>
+<arg>thisistheemail</arg>
+<arg>thisisthepassword</arg>
 </arguments>
-<msg timestamp="20191226 16:46:22.024" level="INFO">Login &amp; Sign Up Forms</msg>
-<status status="PASS" endtime="20191226 16:46:22.024" starttime="20191226 16:46:22.023"></status>
-</kw>
-<kw name="Get Value" library="SeleniumLibrary">
-<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>xpath://input[@type="submit"]</arg>
+<arg>name=fld_username</arg>
+<arg>${username}</arg>
 </arguments>
-<assign>
-<var>${value}</var>
-</assign>
-<msg timestamp="20191226 16:46:22.069" level="INFO">${value} = Sign up</msg>
-<status status="PASS" endtime="20191226 16:46:22.069" starttime="20191226 16:46:22.025"></status>
+<msg timestamp="20200103 15:10:49.969" level="INFO">Typing text 'thisistheusername' into text field 'name=fld_username'.</msg>
+<status status="PASS" endtime="20200103 15:10:51.778" starttime="20200103 15:10:49.968"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>${value}</arg>
+<arg>xpath=//input[@type='email']</arg>
+<arg>${email}</arg>
 </arguments>
-<msg timestamp="20191226 16:46:22.070" level="INFO">Sign up</msg>
-<status status="PASS" endtime="20191226 16:46:22.070" starttime="20191226 16:46:22.069"></status>
+<msg timestamp="20200103 15:10:51.779" level="INFO">Typing text 'thisistheemail' into text field 'xpath=//input[@type='email']'.</msg>
+<status status="PASS" endtime="20200103 15:10:52.042" starttime="20200103 15:10:51.778"></status>
 </kw>
-<kw name="Get List Items" library="SeleniumLibrary">
-<doc>Returns all labels or values of selection list ``locator``.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>id:countryId</arg>
+<arg>name=fld_password</arg>
+<arg>${password}</arg>
 </arguments>
-<assign>
-<var>${allCountries}</var>
-</assign>
-<msg timestamp="20191226 16:46:24.847" level="INFO">${allCountries} = [u'Select Country', u'Afghanistan', u'Albania', u'Algeria', u'American Samoa', u'Andorra', u'Angola', u'Anguilla', u'Antarctica', u'Antigua And Barbuda', u'Argentina', u'Armenia', u'Aruba', u'Australi...</msg>
-<status status="PASS" endtime="20191226 16:46:24.847" starttime="20191226 16:46:22.070"></status>
+<msg timestamp="20200103 15:10:52.043" level="INFO">Typing text 'thisisthepassword' into text field 'name=fld_password'.</msg>
+<status status="PASS" endtime="20200103 15:10:52.298" starttime="20200103 15:10:52.042"></status>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>${allCountries}</arg>
-</arguments>
-<status status="PASS" endtime="20191226 16:46:24.848" starttime="20191226 16:46:24.847"></status>
+<status status="PASS" endtime="20200103 15:10:52.298" starttime="20200103 15:10:49.967"></status>
 </kw>
 <kw type="teardown" name="Close Browser Window" library="BeforeTest">
 <kw name="Get Title" library="SeleniumLibrary">
@@ -78,37 +59,97 @@
 <assign>
 <var>${title}</var>
 </assign>
-<msg timestamp="20191226 16:46:24.852" level="INFO">${title} = Login &amp; Sign Up Forms</msg>
-<status status="PASS" endtime="20191226 16:46:24.852" starttime="20191226 16:46:24.849"></status>
+<msg timestamp="20200103 15:10:52.312" level="INFO">${title} = Login &amp; Sign Up Forms</msg>
+<status status="PASS" endtime="20200103 15:10:52.312" starttime="20200103 15:10:52.299"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${title}</arg>
 </arguments>
-<msg timestamp="20191226 16:46:24.853" level="INFO">Login &amp; Sign Up Forms</msg>
-<status status="PASS" endtime="20191226 16:46:24.853" starttime="20191226 16:46:24.853"></status>
+<msg timestamp="20200103 15:10:52.313" level="INFO">Login &amp; Sign Up Forms</msg>
+<status status="PASS" endtime="20200103 15:10:52.313" starttime="20200103 15:10:52.312"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20191226 16:46:27.923" starttime="20191226 16:46:24.853"></status>
+<status status="PASS" endtime="20200103 15:10:52.807" starttime="20200103 15:10:52.313"></status>
 </kw>
-<status status="PASS" endtime="20191226 16:46:27.924" starttime="20191226 16:46:24.849"></status>
+<status status="PASS" endtime="20200103 15:10:52.808" starttime="20200103 15:10:52.298"></status>
 </kw>
-<status status="PASS" endtime="20191226 16:46:27.924" critical="yes" starttime="20191226 16:46:07.568"></status>
+<status status="PASS" endtime="20200103 15:10:52.808" critical="yes" starttime="20200103 15:10:14.268"></status>
+</test>
+<test id="s1-t2" name="Choose Radio Button">
+<kw type="setup" name="Start Browser and Maximize" library="BeforeTest">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://www.thetestingworld.com/testings/</arg>
+<arg>Opera</arg>
+</arguments>
+<msg timestamp="20200103 15:10:52.812" level="INFO">Opening browser 'Opera' to base url 'https://www.thetestingworld.com/testings/'.</msg>
+<status status="PASS" endtime="20200103 15:11:02.610" starttime="20200103 15:10:52.812"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200103 15:11:02.726" starttime="20200103 15:11:02.611"></status>
+</kw>
+<status status="PASS" endtime="20200103 15:11:02.726" starttime="20200103 15:10:52.811"></status>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<arguments>
+<arg>add_type</arg>
+<arg>home</arg>
+</arguments>
+<msg timestamp="20200103 15:11:02.729" level="INFO">Selecting 'home' from radio button 'add_type'.</msg>
+<status status="PASS" endtime="20200103 15:11:02.946" starttime="20200103 15:11:02.728"></status>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<arguments>
+<arg>name:sex</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200103 15:11:02.947" level="INFO">Selecting options from selection list 'name:sex' by index 2.</msg>
+<status status="PASS" endtime="20200103 15:11:03.133" starttime="20200103 15:11:02.946"></status>
+</kw>
+<kw type="teardown" name="Close Browser Window" library="BeforeTest">
+<kw name="Get Title" library="SeleniumLibrary">
+<doc>Returns the title of the current page.</doc>
+<assign>
+<var>${title}</var>
+</assign>
+<msg timestamp="20200103 15:11:03.147" level="INFO">${title} = Login &amp; Sign Up Forms</msg>
+<status status="PASS" endtime="20200103 15:11:03.147" starttime="20200103 15:11:03.134"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20200103 15:11:03.148" level="INFO">Login &amp; Sign Up Forms</msg>
+<status status="PASS" endtime="20200103 15:11:03.149" starttime="20200103 15:11:03.148"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200103 15:11:03.213" starttime="20200103 15:11:03.149"></status>
+</kw>
+<status status="PASS" endtime="20200103 15:11:03.214" starttime="20200103 15:11:03.133"></status>
+</kw>
+<status status="PASS" endtime="20200103 15:11:03.214" critical="yes" starttime="20200103 15:10:52.810"></status>
 </test>
 <doc>This test is for open login and close browser</doc>
-<status status="PASS" endtime="20191226 16:46:27.925" starttime="20191226 16:46:07.379"></status>
+<status status="PASS" endtime="20200103 15:11:03.216" starttime="20200103 15:10:13.021"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="TC002 FetchData" pass="1">TC002 FetchData</stat>
+<stat fail="0" id="s1" name="Login TC" pass="2">Login TC</stat>
 </suite>
 </statistics>
 <errors>
